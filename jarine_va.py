@@ -8,7 +8,7 @@ import wikipedia
 # this method is for taking the commands
 # and recognizing the command from the
 # speech_Recognition module we will use
-# the recongizer method for recognizing
+# the recognizer method for recognizing
 def take_command():
     r = sr.Recognizer()
 
@@ -52,7 +52,7 @@ def speak(audio):
 
     # setter method .[0]=male voice and
     # [1]=female voice in set Property.
-    engine.setProperty('voice', voices[0].id)
+    engine.setProperty('voice', voices[1].id)
 
     # Method for the speaking of the the assistant
     engine.say(audio)
@@ -97,7 +97,7 @@ def hello():
     # This function is for when the assistant
     # is called it will say hello and then
     # take query
-    speak("hello sir I am your desktop assistant. Tell me how may I help you")
+    speak("hello sir I am Jarine, your virtual assistant. Tell me how may I help you")
 
 
 def take_query():
@@ -107,7 +107,7 @@ def take_query():
 
     # This loop is infinite as it will take
     # our queries continuously until and unless
-    # we do not say bye to exit or terminsate
+    # we don't say bye to exit or terminate
     # the program
     while True:
 
@@ -123,24 +123,24 @@ def take_query():
             # of the website and it automatically open
             # it in your default browser
             webbrowser.open("www.geeksforgeeks.com")
-            continue
+            #continue
 
         elif "open google" in query:
             speak("Opening Google ")
             webbrowser.open("www.google.com")
-            continue
+            #continue
 
         elif "which day it is" in query:
             tell_day()
-            continue
+            #continue
 
         elif "tell me the time" in query:
             tell_time()
-            continue
+            #continue
 
         # this will exit and terminsate the program
         elif "bye" in query:
-            speak("Bye. Check Out GFG for more exicting things")
+            speak("Bye. Check Out GFG for more exciting things")
             exit()
 
         elif "from wikipedia" in query:
@@ -158,7 +158,7 @@ def take_query():
             speak(result)
 
         elif "tell me your name" in query:
-            speak("I am Jarvis. Your desktop Assistant")
+            speak("I am Jarine. Your desktop Assistant")
 
 
 if __name__ == '__main__':
