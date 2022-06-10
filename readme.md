@@ -19,7 +19,7 @@ req.txt
 ``Under Dist directory > jarine_va > jarine_va.exe``
 
 <h3>executable command</h3>
-``dist\jarine_va\jarine_va.exe``
+``  dist\jarine_va\jarine_va.exe  ``
 
 
 **=======================================================**

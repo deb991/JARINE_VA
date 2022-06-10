@@ -3,6 +3,8 @@ import speech_recognition as sr
 import webbrowser
 import datetime
 import wikipedia
+from feature import check_file, read_content
+import pywhatkit
 
 
 # this method is for taking the commands
@@ -160,8 +162,28 @@ def take_query():
         elif "tell me your name" in query:
             speak("I am Jarine. Your desktop Assistant")
 
+        elif "read the file" in query:
+            query1 = []
+            print('Ozzius:\t', query)
+            query1.append(query.replace("read", '').replace('the file', '').replace('from', ''))
+            query1 = ' '.join(query1).split()
+            print('Ozzius2:\t', query1)
+            filename = str(''.join(query1[:-1]))
+            print('file_Name@172:\t', filename)
+            path = str(query1[-1])
+            print('path:\t', path)
+            file = check_file(filename, path)
+            print('file_Name:\t', file)
+            data = read_content(file)
+            speak(data)
+
+        elif 'play song' in query:
+            try:
+                query_song = query.replace('play song', '')
+                pywhatkit.playonyt(query_song)
+            except:
+                speak('repeat the song name again')
+
 
 if __name__ == '__main__':
-    # main method for executing
-    # the functions
     take_query()
